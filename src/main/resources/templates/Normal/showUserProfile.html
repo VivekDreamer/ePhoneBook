@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="Normal/base::Layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<section style="margin-top:60px; padding-top:30px;">
+		<div class="card color2" >
+			<div class="card-body">
+				<div class="container">
+				<div class="row">
+					<div class="col-md-4" style="margin-top:50px;">
+						<img src="" style="height:200px; width:200px;" th:src="@{'/USER_PROFILE/'+${user.imageUrl}}" class="profilePicture" alt="profile_photo" />
+						<h1 class="mt-3 color1"><span  th:text="${user.name}"></span></h1>
+					</div>
+					<div class="col-md-8" style="margin-top:70px;">
+						
+						<!-- message box -->
+					<div th:if="${session.message}" class="container text-center " id="messageDiv">
+						<div th:classappend="${'alert-'+session.message.type}" class="alert alert-dismissible fade show" role="alert">
+	  						<span th:text="${session.message.content}"></span>
+	  						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+						</div>
+						<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+					</div>
+						
+						<table class="table  table-bordered font2" style="border-color:white; color:white;">
+						  <thead>
+						    <tr>
+						      <th scope="col">User-ID</th>
+						      <th scope="col"><span th:text="${user.id}"></span></th>
+						      
+						    </tr>
+						  </thead>
+						  <tbody>
+						    <tr>
+						      <th scope="row">Email</th>
+						      <td><span th:text="${user.email}"></span></td>
+						    </tr>
+						    <tr>
+						      <th scope="row">Role</th>
+						      <td><span th:text="${user.role}"></span></td>
+						    </tr>
+						    <tr>
+						    	 <th scope="row">About</th>
+						    	 <td><span th:text="${user.about}"></span></td>
+						    </tr>    
+						  </tbody>
+						</table>
+						<div class="container text-center">
+					         <form th:action="@{/user/update/profile}" method="post">
+					       	   		<button type="submit" class="btn btn-lg btn-success">UPDATE</button>
+					       	 </form>
+						 </div>
+						 <div class="container text-center mt-3">
+					         <form th:action="@{/user/delete}" method="post">
+					       	   		<button type="submit" class="btn btn-lg btn-danger">DELETE</button>
+					       	 </form>
+						 </div>		
+					</div>
+				</div>
+					    		
+				</div>
+			</div>
+		</div>
+		
+		<script>
+			$(document).ready(()=>{
+				$(".random").removeClass("active");
+				$("#profile-link").addClass("active");
+			});
+		</script>
+		
+	</section>
+</body>
+</html>

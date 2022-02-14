@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::Layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title>Document</title>
+</head>
+<body>
+	
+	<section class="my-5">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-4 col-sm-4 col-xs-12"></div>
+			<div class=" col-xs-12 col-md-8 col-sm-8 offset-sm-2 offset-md-2 col-lg-6 offset-lg-3 col-12">
+				<!-- form start -->
+					<form class="form-container" th:action="@{/dologin}" action="#" method="post" id="login-form">
+						<h1 class="text-center color1 animate__animated animate__zoomIn">Login form!!!</h1>
+						
+						<div th:if="${param.error}" class="alert alert-danger">
+							Invalid username and password
+						</div>
+						
+						<div th:if="${param.logout}" class="alert alert-success">
+							Successfully logged out.
+						</div>
+						
+						<div th:if="${param.change}" class="alert alert-success">
+							<p th:text="${param.change}"></p>	
+						</div>
+						
+						<div class="mb-3">
+							<label for="exampleInputEmail1" class="form-label color1">Email address</label>
+							 <input type="email"
+							 		name="username"
+							 	    class="form-control"
+									id="exampleInputEmail1" 
+									aria-describedby="emailHelp"
+									placeholder="Enter your email id">
+							
+						</div>
+						
+						
+						<div class="mb-3">
+							<label for="exampleInputPassword1" class="form-label color1">Password</label>
+							<div class="input-group">
+									<input type="password"
+										   name="password" 
+										   class="form-control passwordInputField"
+										   id="password"
+										   placeholder="Enter your password">
+									 
+						                <span class="input-group-text" onclick="password_show_hide();" >
+						                  <i class="fas fa-eye" id="show_eye"></i>
+						                  <i class="fas fa-eye-slash d-none" id="hide_eye"></i>
+						                </span>
+		           					   
+           					</div>
+						</div>
+						
+						<div class="d-grid gap-2">
+							<button type="submit" class="btn btn-outline-success btn-block">Login</button>
+							<p class="color1">Not a registered user? <a th:href="@{/signup}">Sign Up now</a></p>
+							<p class="color1"><a th:href="@{/forgot}">Forgot Password?</a></p>
+						</div>
+						
+					</form>
+					<!-- form end -->
+			</div>
+			<div class="col-md-4 col-sm-4 col-xs-12"></div>
+		</div>
+	</div>
+		<script>
+			$(document).ready(()=>{
+				$(".nav-link").removeClass("active");
+				$("#login-link").addClass("active");
+			});
+			
+			
+		</script>
+	</section>
+</body>
+</html>

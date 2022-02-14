@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="Normal/base::Layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+
+
+<section class="sectioncontact">
+	<div class="container">
+		<div class="row">
+		<div class="col-md-4 " style="margin-top:120px;">
+						<img src="" style="height:200px; width:200px;" th:src="@{'/USER_PROFILE/'+${user.imageUrl}}" class="profilePicture" alt="profile_photo" />
+		</div>
+		<div class="col-md-8">
+			<div class="card login-form">
+				<div class="card-body">
+					<h1 class="card-title text-center color1 animate__animated animate__zoomIn font1">UPDATE PROFILE</h1>
+					
+					<div class="card-text">
+						<form action="#" th:object="${user}" enctype="multipart/form-data" method="post" th:action="@{/user/process_updateUser}" class="mt-2 formcontact">
+							
+							<div class="input-group mb-3 ">
+  								<span class="input-group-text contactfield1" id="inputGroup-sizing-default"><i class="fas fa-portrait color1"></i></span>
+  								<input style="background: black;" readonly="readonly" th:value="${user.id}" required type="text" placeholder="Enter id here" class="form-control contactfield" name="userId" id="userId" aria-label="Sizing example input"  aria-describedby="inputGroup-sizing-default">
+							</div>
+							
+							<!-- first name -->
+							<div class="input-group mb-3 ">
+  								<span class="input-group-text contactfield1" id="inputGroup-sizing-default"><i class="fa fa-plus color1"></i></span>
+  								<input th:value="${user.name}" required type="text" class="form-control contactfield" name="name" id="firstName" aria-label="Sizing example input" placeholder="Enter name here" aria-describedby="inputGroup-sizing-default">
+							</div>
+								
+							<!-- email -->	
+							<div class="input-group mb-3">
+  								<span class="input-group-text contactfield1" id="inputGroup-sizing-default"><i class="fas fa-user-alt color1"></i></span>
+  								<input th:value="${user.email}" type="email" id="email" name="email" placeholder="Enter email here"
+  									class="form-control contactfield" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+							</div>
+							
+							<!-- role -->
+							<div class="input-group mb-3">
+  								<span class="input-group-text contactfield1" id="inputGroup-sizing-default"><i class="fa fa-phone color1"></i></span>
+  								<input required type="text" style="background: black;" th:value="${user.role}"   id="role" name="role" readonly="readonly"
+  									class="form-control contactfield" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+							</div>
+							
+							<!-- about -->
+							<div class="input-group mb-3">
+  								<span class="input-group-text contactfield1" id="inputGroup-sizing-default">@</span>
+  								<input type="text" id="about" th:value="${user.about}" name="about" placeholder="Enter email here"
+  									class="form-control contactfield" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+							</div>
+						
+						  <!-- profile-image -->
+							<div class="input-group mb-3">
+								<span class="input-group-text contactfield1"><i class="fas fa-camera color1"></i></span>
+ 								<input type="file" class="form-control contactfield" name="userProfileImage" > 
+  								<label style="border-top:none; border-right:none;" class="input-group-text contactfield1 color1" for="inputGroupFile02">Upload an image</label>
+							</div>
+							
+							<div class="container text-center">
+								<button class="btn btn-outline-primary">SAVE</button>
+							</div>
+						
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>	
+		</div>
+	</section>
+
+</body>
+</html>

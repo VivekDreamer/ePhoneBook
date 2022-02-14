@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="Normal/base::Layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<section class="my-5">
+		<div class="container-fluid" >
+			 <img src="" th:src="@{/IMAGE/userDashboard.jpg}" style="width:100%;opacity: 0.5;height: 100vh;background: cover;" alt="" /> 
+			 <div class="centered">
+			 	<h1 class="color1" style="font-size: 60px;">Start adding your contacts!!</h1>
+			 	<div class="container text-center">
+			 		<a th:href="@{/user/addContact}"><button class="btn btn-primary btn-lg">--------></button></a>
+			 	</div>
+			 	
+			 	<h3 class="my-3 color1">Want to help us? Start donating... </h3>
+			 	<input type="text" id="paymentField" class="form-control my-3" placeholder="Enter amount here.." />
+			 	<div class="container text-center">
+			 		<button onclick="paymentStart()" class="btn btn-outline-success btn-lg">PAY,THANK YOU!!!</button>
+			 	</div>
+			 </div>	
+		</div>
+		
+		<script>
+			$(document).ready(()=>{
+				$(".random").removeClass("active");
+				$("#home-link").addClass("active");
+			});
+		</script>
+	</section>
+</body>
+</html>

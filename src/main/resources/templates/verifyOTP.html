@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::Layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title>Document</title>
+</head>
+<body>
+	
+	<section class="my-5">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-4 col-sm-4 col-xs-12"></div>
+			<div class=" col-xs-12 .col-md-8 col-sm-8 offset-md-2 col-lg-6 offset-lg-3 col-12">
+				<!-- form start -->
+					<form class="form-container" method="post" th:action="@{/verify-otp}" action="#" id="login-form">
+						
+						<div class="alert alert-success" role="alert">
+							<h3 class="text-center font3 animate__animated animate__pulse animate__repeat-2">We have sent OTP to your mail</h3>
+						</div>
+						
+						<!-- message box -->
+							<!-- <div th:if="${session.message}" class="container text-center " id="messageDiv">
+								<div  class="alert alert-danger my-2 fade show" role="alert">
+			  						<span th:text="${session.message}"></span>
+			  						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+								</div>
+								<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+							</div> -->
+						
+						<!-- message box -->
+						<div th:if="${session.message}" class="container" id="messageDiv">	
+							<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  									<span th:text="${session.message}"></span>
+ 									<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+							</div>
+							<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+						</div>
+					
+						<div class="mb-3">
+							<label for="exampleInputEmail1" class="form-label color1">Enter OTP here</label>
+							 <input type="number"
+							 		name="otp"
+							 	    class="form-control"
+									id="exampleInputEmail1" 
+									aria-describedby="emailHelp"
+									placeholder="Enter your email id"
+									required>
+							
+						</div>
+						
+						<div class="d-grid gap-2">
+							<button type="submit" class="btn btn-outline-success btn-block">VERIFY OTP</button>
+						</div>						
+					
+					</form>
+					<!-- form end -->
+			</div>
+			<div class="col-md-4 col-sm-4 col-xs-12"></div>
+		</div>
+	</div>
+		<script>
+			$(document).ready(()=>{
+				$(".nav-link").removeClass("active");
+				$("#login-link").addClass("active");
+			});
+		</script>
+	</section>
+</body>
+</html>

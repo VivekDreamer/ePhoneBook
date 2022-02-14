@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::Layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<title>Home page</title>
+</head>
+<body>
+
+
+	<section class="banner" id="home">
+
+		<div id="carouselExampleCaptions" class="carousel slide"
+			data-bs-ride="carousel">
+			<div class="carousel-indicators">
+				<button type="button" data-bs-target="#carouselExampleCaptions"
+					data-bs-slide-to="0" class="active" aria-current="true"
+					aria-label="Slide 1"></button>
+				<button type="button" data-bs-target="#carouselExampleCaptions"
+					data-bs-slide-to="1" aria-label="Slide 2"></button>
+				<button type="button" data-bs-target="#carouselExampleCaptions"
+					data-bs-slide-to="2" aria-label="Slide 3"></button>
+			</div>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<div class="overlay-image"
+						style="background-image: url('../IMAGE/slider1.jpg');"></div>
+					<div class="container caption">
+						<h1>Finding Someone made easy...</h1>
+						<p>Now you can store all your contact details online...</p>
+						<a href="#" th:href="@{/signup}" class="btn btn-lg btn-primary">Sign up today.</a>
+					</div>
+				</div>
+
+				<div class="carousel-item ">
+					<div class="overlay-image"
+						style="background-image: url('../IMAGE/slider4.jpg');"></div>
+					<div class="container caption">
+						<h1>Keep in touch with your lovely one's....</h1>
+						<p>Keep your contacts with you wherever you go :)</p>
+						<a href="#" th:href="@{/signup}" class="btn btn-lg btn-primary">Sign up today.</a>
+					</div>
+				</div>
+
+				<div class="carousel-item ">
+					<div class="overlay-image"
+						style="background-image: url('../IMAGE/slider6.jpg');"></div>
+					<div class="container caption">
+						<h1>Immediately sign in and start adding your contacts...</h1>
+						<p>Get rid off old diary era....Enjoy!!</p>
+						<a href="#" th:href="@{/signup}" class="btn btn-lg btn-primary">Sign up today.</a>
+					</div>
+				</div>
+			</div>
+			<button class="carousel-control-prev" type="button"
+				data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button"
+				data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+
+
+		<section class="about my-5" id="about">
+			<div class="container">
+				<div class=" text-center my-5">
+					<h1 class="color1" data-aos="fade-up">
+						About<span class="text-primary"> me</span>
+					</h1>
+					<hr class="w-25 m-auto">
+				</div>
+				<div class="row p-3">
+					<div class="col-sm-12 col-md-6 col-lg-6 col-12" data-aos="zoom-in" data-aos-offset="200">
+						<h1 class="color1">
+							What do you <span class="text-primary">want to know?</span>
+						</h1>
+						<p class="p-2 color1">I have just over a year of experience as
+							software engineer. In this short span of time, I always tried to
+							learn more and more skills. While learning those skills, this is
+							what I made my first website. Hope you all will like this. Thank
+							you!!!</p>
+					</div>
+					<div class="col-sm-12 col-md-6 col-lg-6 col-12 m-auto text-end" data-aos="fade-right" data-aos-offset="200">
+						<img src="/IMAGE/vivek3.jpeg" class="img-fluid img-thumbnail" />
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="feature py-5 bg-primary" id="features">
+			<div class="container">
+				<div class="text-center my-5">
+					<h1 class="color1" data-aos="fade-up">
+						Our <span class="text-primary">Features</span>
+					</h1>
+					<hr class="w-25 m-auto" />
+				</div>
+				<div class="row" data-aos="zoom-in-up" data-aos-offset="200">
+					<div class="col-sm-12 col-md-4 col-lg-4 col-12">
+						<div class="card">
+							<div class="card-body color2 color1">
+								<h5 class="card-title">Screen Compatible</h5>
+								<p class="card-text">It will work smoothly in all types 
+								of devices without creating any errors. It's complete 
+								responsive website.</p>
+								<a href="#" th:href="@{/signup}" class="btn btn-primary">Use Now!</a>
+							</div>
+						</div>
+					</div>
+					
+					
+					<div class="col-sm-12 col-md-4 col-lg-4 col-12">
+						<div class="card">
+							<div class="card-body color2 color1">
+								<h5 class="card-title">User's Friendly</h5>
+								<p class="card-text">It's functioning is very easy.
+								Even a common person can use this.
+								In short, this website provides you the user's friendly 
+								interface.
+								</p>
+								<a href="#" th:href="@{/signup}" class="btn btn-primary">Use Now!</a>
+							</div>
+						</div>
+					</div>
+					
+					
+					<div class="col-sm-12 col-md-4 col-lg-4 col-12">
+						<div class="card">
+							<div class="card-body color2 color1">
+								<h5 class="card-title">Security</h5>
+								<p class="card-text">Providing security to you, safeguarding all 
+								your contacts. No one can peek on your contacts without
+								your permission. </p>
+								<a href="#" th:href="@{/signup}" class="btn btn-primary">Use Now!</a>
+							</div>
+						</div>
+					</div>
+					
+					
+				</div>
+			</div>
+
+		</section>
+		
+	</section>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::Layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>this is about page</title>
+</head>
+<body>
+	<section class="my-5 signuppage">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 offset-md-2">
+					<div class="signup">
+					
+						 <div th:if="${session.message}" th:classappend="${session.message.type}" class="alert" role="alert">
+							 <p class="text-center" th:text=${session.message.content}></p>
+							 
+							 <th:block th:text="${#session.removeAttribute('message')}"></th:block>
+						</div> 
+
+						<h1 class="text-center titleRegister animate__animated animate__zoomIn">Register here!!!</h1>
+						<form novalidate th:action=@{/do_register} method="post" th:object="${user}" enctype="multipart/form-data">
+						
+							<div class="mb-3">
+	   							<label for="exampleInput">Your Name</label>
+	    						<input 
+	    						 name="name"
+	    						 type="text"
+	    						 class="form-control"
+	    						 th:classappend="${#fields.hasErrors('name') ? 'is-invalid':''}"
+	    						 id="name"
+	    						 aria-describedby="emailHelp"
+	    						 placeholder="Enter here"
+	    						 required="required"
+	    						 th:value="${user.name}">
+	    					
+	    						 <div id="validationServer03Feedback"
+	    						      class="invalid-feedback" 
+	    						      th:each="e : ${#fields.errors('name')}" 
+	    						      th:text="${e}"></div>
+    							
+	    					
+	    					</div>
+	    					
+	    					
+	    					
+	    					<div class="mb-3">
+	   							<label for="exampleInputEmail">Your Email</label>
+	    						<input 
+	    						 name="email"
+	    						 type="email"
+	    						 class="form-control"
+	    						 th:classappend="${#fields.hasErrors('email') ? 'is-invalid':''}"
+	    						 id="email"
+	    						 aria-describedby="emailHelp"
+	    						 placeholder="Enter here"
+	    						 required="required"
+	    						 th:value="${user.email}">
+	    						 
+	    						 <div id="validationServer03Feedback"
+	    						      class="invalid-feedback" 
+	    						      th:each="e : ${#fields.errors('email')}" 
+	    						      th:text="${e}"></div>
+	    						 
+	    					</div>
+	    					
+	    					<div class="mb-3">
+	   							<label for="exampleInputPassword">Your Password</label>
+	   							<div class="input-group">
+			    						<input
+			    						 name="password" 
+			    						 type="password"
+			    						 class="form-control passwordInputField"
+			    						 th:classappend="${#fields.hasErrors('password') ? 'is-invalid':''}"
+			    						 id="password"
+			    						 aria-describedby="emailHelp"
+			    						 placeholder="Enter here"
+			    						 required="required"
+			    						 th:value="${user.password}">
+			    						 
+			    						<span class="input-group-text" onclick="password_show_hide();" >
+						                  <i class="fas fa-eye" id="show_eye"></i>
+						                  <i class="fas fa-eye-slash d-none" id="hide_eye"></i>
+						                </span>
+	    						 </div>
+	    						 <div id="validationServer03Feedback"
+	    						      class="invalid-feedback" 
+	    						      th:each="e : ${#fields.errors('password')}" 
+	    						      th:text="${e}"></div>
+	    						 
+	    					</div>
+	    					
+	    					<!-- profile-image -->
+							<div class="mb-3">
+								<label for="exampleInputImage">Upload Image</label>
+								<input type="file"
+									   class="form-control" 
+									   name="userimage" > 
+							</div>
+	    					
+	    					<div class="mb-3">
+	    						<textarea th:text="${user.about}" class="form-control" name="about" id="" cols="30" rows="10" placeholder="Enter something about yourself"></textarea>
+	    					</div>
+	    					
+	    					<!-- t&c check -->
+
+							<div class="mb-3">
+								<input type="checkbox"
+								name="agreement"
+								id="agreement" 
+								/>
+								<label for="agreement">Accept terms & conditions applied.</label>
+							</div>
+								    					
+	    					<div class="container text-center">
+	    						<button type="submit" class="btn btn-outline-primary btn-lg text-white">
+	    							submit
+	    						</button>
+	    						<button type="reset" class="btn btn-outline-secondary btn-lg text-white">
+	    							reset
+	    						</button>
+	    					</div>
+	    					
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script>
+			$(document).ready(()=>{
+				$(".nav-link").removeClass("active");
+				$("#signup-link").addClass("active");
+			});
+		</script>
+		
+	</section>
+</body>
+</html>

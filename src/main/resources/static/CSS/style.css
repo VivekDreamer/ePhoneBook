@@ -1,0 +1,215 @@
+/* Google Font Link */
+
+
+
+body{
+	background:#e2e2e2!important;
+}
+.bg-primary{
+	background: black!important;
+}
+.color1{
+	color: white;
+}
+.color2{
+	background-color: black;
+}
+.input-style{
+	border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+  background-color: black;
+}
+.banner{
+	width:100%;
+	height:93vh;
+	
+	background-size: cover;
+	color:black;
+}
+.textstyle{
+	font-family: 'Dancing Script', cursive;
+	font-weight: bold;
+}
+.form-container{
+	border: 0px solid #fff;
+	padding: 50px 60px;
+	margin-top: 20vh;
+	-webkit-box-shadow: 2px -1px 9px 3px rgba(250,250,250,1);
+-moz-box-shadow: 2px -1px 9px 3px rgba(250,250,250,1);
+box-shadow: 2px -1px 9px 3px rgba(250,250,250,1);
+}
+.font1{
+font-family: 'Lobster', cursive;	
+}
+.font2{
+	font-family: 'Lobster Two', cursive;
+	font-size: 25px;
+}
+.font3{
+	font-family: 'PT Serif', serif;
+}
+h1{
+	font-family: 'Dancing Script', cursive;
+}
+.signup{
+	padding: 20px;
+}
+
+html,body{
+	height:100%;
+}
+
+.signuppage{
+	background:black;
+}
+textarea{
+	resize:none;
+}
+.signup{
+	
+	width: 100%;
+	height: 100%;
+	/* background-color:black!important; */
+	background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url("../IMAGE/homepage.jpg");
+	background-size: cover;
+	background-attachment: fixed; 
+ 	/* background: black!important;   */
+}
+
+.signuppage label, .titleRegister{
+	color:white;
+}
+
+
+
+.login-form{
+	background: black;
+	border-radius: 10px;
+}
+.contactfield{
+	
+	background: black;
+	border: none;
+	color:white;
+	border-bottom: 2px solid grey;
+	border-left: 2px solid grey;
+	border-radius: 10px;
+	margin-bottom: 10px; 
+}
+.contactfield1{
+	color:white;
+	background: black;
+	border-bottom: 2px solid white;
+	border-radius: 10px;
+	margin-bottom: 10px;
+}
+.contactfield:focus{
+	background: black;
+	color:white;
+	
+}
+.sectioncontact{
+	padding-top: 60px;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  color: blue;
+  
+}
+
+.profilePicture{
+	width: 35px;
+	height: 35px;
+	object-fit: cover;
+	border-radius: 50%;
+	background-color:white;
+}
+
+.profilePicture1{
+	width: 70px;
+	height: 70px;
+	object-fit: cover;
+	border-radius: 50%;
+	background-color:white;
+}
+
+
+ .modal-content{
+	background: black;
+} 
+
+.modalback{
+	opacity: 1;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*search css*/
+
+
+.search {
+    position: relative;
+    box-shadow: 0 0 40px rgba(51, 51, 51, .1)
+}
+
+.search input {
+	background: black;
+	color: white;
+	width: 100%;
+    height: 60px;
+    text-indent: 25px;
+    border: 2px solid #d6d4d4
+}
+
+.search input:focus {
+    box-shadow: none;
+    border: 2px solid white;
+    background : black;
+    color: white;
+}
+
+.search .fa-search {
+    position: absolute;
+    top: 20px;
+    left: 16px;
+    color: white;
+}
+
+.search button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 50px;
+    width: 110px;
+    background: blue
+}
+
+.search-container{
+	position: relative;
+}
+
+.search-result{
+	display: none;
+	position: absolute;
+/* 	padding: 10px; */
+	border: 1px solid white;
+	
+}
+/*search over*/
+
+.list-group-item{
+	border-bottom: 1px solid white;
+}
+
+/* password-field styling */
+.passwordInputField{
+	font-family: verdana, Geneva, Tahoma, sans-serif;
+	letter-spacing: 0.1ch;
+}
